@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package wallet;
+
+service WalletService {
+  rpc Transaction (TransactionRequest) returns (TransactionResponse) {}
+}
+
+message TransactionRequest {
+  string userId = 1;
+  Operation operation = 2;
+  optional string transactionId = 3;
+  int32 amount = 4;
+}
+
+message TransactionResponse {
+  int32 status = 1;
+  repeated string error = 2;
+}
+
+enum Operation {
+  deposit = 0;
+  withdraw = 1;
+  cancellation = 2;
+  reversal = 3;
+  purchase = 4;
+}
