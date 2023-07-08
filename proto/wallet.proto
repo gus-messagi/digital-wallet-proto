@@ -10,7 +10,7 @@ message TransactionRequest {
   string userId = 1;
   Operation operation = 2;
   optional string transactionId = 3;
-  int32 amount = 4;
+  optional int32 amount = 4;
 }
 
 message TransactionResponse {
