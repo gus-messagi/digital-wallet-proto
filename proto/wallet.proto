@@ -10,7 +10,7 @@ message TransactionRequest {
   string userId = 1;
   Operation operation = 2;
   optional string transactionId = 3;
-  optional int32 amount = 4;
+  optional float amount = 4;
 }
 
 message TransactionResponse {
@@ -21,7 +21,7 @@ message TransactionResponse {
 enum Operation {
   deposit = 0;
   withdraw = 1;
-  cancellation = 2;
+  purchase = 2;
   reversal = 3;
-  purchase = 4;
+  cancellation = 4;
 }
