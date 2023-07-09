@@ -1,1 +1,1 @@
-# digital-wallet-proto
+# Digital Wallet Protos
