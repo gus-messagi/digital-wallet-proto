@@ -20,7 +20,7 @@ message TransactionResponse {
 }
 
 message BalanceRequest {
-  string usedId = 1;
+  string userId = 1;
 }
 
 message BalanceResponse {
