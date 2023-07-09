@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package statement;
+
+service StatementService {
+  rpc GenerateStatement (GenerateStatementRequest) returns (GenerateStatementResponse) {}
+}
+
+message GenerateStatementRequest {
+  string userId = 1;
+  string maxDate: 2;
+}
+
+message GenerateStatementResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  optional repeated StatementItem = 3;
+}
+
+message StatementItem {
+  float amountBefore = 1;
+  float amountAfter = 2;
+  string operation = 3;
+}

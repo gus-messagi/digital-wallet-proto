@@ -5,6 +5,7 @@ package wallet;
 service WalletService {
   rpc Transaction (TransactionRequest) returns (TransactionResponse) {}
   rpc Balance (BalanceRequest) returns (BalanceResponse) {}
+  rpc GetTrasactions (GetTransactionsRequest) returns (GetTransactionsResponse) {}
 }
 
 message TransactionRequest {
@@ -27,6 +28,24 @@ message BalanceResponse {
   int32 status = 1;
   repeated string error = 2;
   float balance = 3;
+}
+
+message GetTransactionsRequest {
+  string userId = 1;
+  string maxDate = 2;
+}
+
+message GetTransactionsResponse {
+  repeated TransactionItem items = 1;
+}
+
+message TransactionItem {
+  string id = 1;
+  string parentId = 2;
+  string userId = 3;
+  string operation = 4;
+  float amount = 5;
+  string createdAt = 6;
 }
 
 enum Operation {
