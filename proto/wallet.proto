@@ -36,7 +36,9 @@ message GetTransactionsRequest {
 }
 
 message GetTransactionsResponse {
-  repeated TransactionItem items = 1;
+  int32 status = 1;
+  repeated string error = 2;
+  optional repeated TransactionItem items = 3;
 }
 
 message TransactionItem {
