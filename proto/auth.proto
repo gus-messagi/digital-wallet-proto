@@ -6,6 +6,7 @@ service AuthService {
   rpc SignUp (SignUpRequest) returns (SignUpResponse) {}
   rpc SignIn (SignInRequest) returns (SignInResponse) {}
   rpc Validation (ValidationRequest) returns (ValidationResponse) {}
+  rpc GetUserById (GetUserByIdRequest) returns (GetUserByIdResponse) {}
 }
 
 message SignInRequest {
@@ -38,4 +39,22 @@ message ValidationResponse {
   int32 status = 1;
   repeated string error = 2;
   string userId = 3;
+}
+
+message GetUserByIdRequest {
+  string id = 1;
+}
+
+message GetUserByIdResponse {
+  int32 status = 1;
+  repeated string error = 2;
+  User user = 3; 
+}
+
+message User {
+  string id = 1;
+  string email = 2;
+  string createdAt = 3;
+  string updatedAt = 4;
+  optional string deletedAt = 5;
 }
