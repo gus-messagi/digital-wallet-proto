@@ -18,7 +18,7 @@ message GenerateStatementResponse {
 }
 
 message StatementItem {
-  float amountBefore = 1;
-  float amountAfter = 2;
+  float amount = 1;
+  float balance = 2;
   string operation = 3;
 }
