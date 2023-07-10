@@ -5,7 +5,7 @@ package wallet;
 service WalletService {
   rpc Transaction (TransactionRequest) returns (TransactionResponse) {}
   rpc Balance (BalanceRequest) returns (BalanceResponse) {}
-  rpc GetTrasactions (GetTransactionsRequest) returns (GetTransactionsResponse) {}
+  rpc GetTransactions (GetTransactionsRequest) returns (GetTransactionsResponse) {}
 }
 
 message TransactionRequest {
