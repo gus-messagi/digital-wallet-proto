@@ -14,7 +14,7 @@ message GenerateStatementRequest {
 message GenerateStatementResponse {
   int32 status = 1;
   repeated string error = 2;
-  repeated StatementItem = 3;
+  repeated StatementItem items = 3;
 }
 
 message StatementItem {
