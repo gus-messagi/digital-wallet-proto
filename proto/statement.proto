@@ -8,13 +8,13 @@ service StatementService {
 
 message GenerateStatementRequest {
   string userId = 1;
-  string maxDate: 2;
+  string maxDate = 2;
 }
 
 message GenerateStatementResponse {
   int32 status = 1;
   repeated string error = 2;
-  optional repeated StatementItem = 3;
+  repeated StatementItem = 3;
 }
 
 message StatementItem {
